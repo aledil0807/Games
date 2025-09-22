@@ -3,6 +3,12 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  text-align: initial;
+  box-sizing: border-box;
 }
 
 .logo {
@@ -39,4 +45,83 @@
 
 .read-the-docs {
   color: #888;
+}
+
+/* Layout para App.jsx semántico */
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-header {
+  background: #222;
+  color: #fff;
+  
+  text-align: center;
+  box-shadow: 0 2px 8px #0002;
+  
+}
+
+.app-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.app-content {
+  flex: 1;
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+  background: #f6f8fa;
+  min-height: 0;
+  overflow: hidden;
+}
+
+
+
+.header-controls {
+  margin-left: 1rem;
+}
+
+.header-controls button {
+  padding: 0.4rem 0.7rem;
+  border-radius: 6px;
+  border: none;
+  background: #10b981;
+  color: white;
+  cursor: pointer;
+}
+
+@media (max-width: 640px) {
+  .stack-container { width: 96%; height: 86% }
+}
+/* contenedor que ocupa todo el espacio debajo del header */
+.app-content {
+  padding: 16px; /* separación interior sin aumentar el tamaño del contenedor (medido en App.jsx) */
+  box-sizing: border-box;
+
+}
+
+/* grid que rellena el contenedor y hace que las celdas sean cuadradas */
+.grid-stack {
+  display: grid;
+  
+  
+  gap: 6px;
+}
+
+/* cada celda mantiene proporción cuadrada con object-fit technique (aspect-ratio) */
+.square {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.square:hover {
+  transform: scale(1.04);
 }
